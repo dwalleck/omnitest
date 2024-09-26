@@ -1,0 +1,10 @@
+{
+    "editor.defaultFormatter": "ms-dotnettools.csdevkit",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "omnisharp.organizeImportsOnFormat": true,
+    "[csharp]": {
+        "editor.defaultFormatter": "ms-dotnettools.csharp"
+    }
+}

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTest.Core", "src\Sharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTest.Runner", "src\SharpTest.Runner\SharpTest.Runner.csproj", "{1E0608CB-99E6-44AD-9D59-8C49A9D00A87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharpTest.SampleTests", "src\SharpTest.SampleTests\SharpTest.SampleTests.csproj", "{F276AB81-3604-4F7E-A569-05FB78ACAC27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +28,14 @@ Global
 		{1E0608CB-99E6-44AD-9D59-8C49A9D00A87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1E0608CB-99E6-44AD-9D59-8C49A9D00A87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1E0608CB-99E6-44AD-9D59-8C49A9D00A87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F276AB81-3604-4F7E-A569-05FB78ACAC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F276AB81-3604-4F7E-A569-05FB78ACAC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F276AB81-3604-4F7E-A569-05FB78ACAC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F276AB81-3604-4F7E-A569-05FB78ACAC27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6A0C1A6D-4056-4BF6-AC24-A508874B3C69} = {ED6E3B57-32AA-4BE7-8E54-3E1BDEB07B12}
 		{1E0608CB-99E6-44AD-9D59-8C49A9D00A87} = {ED6E3B57-32AA-4BE7-8E54-3E1BDEB07B12}
+		{F276AB81-3604-4F7E-A569-05FB78ACAC27} = {ED6E3B57-32AA-4BE7-8E54-3E1BDEB07B12}
 	EndGlobalSection
 EndGlobal
