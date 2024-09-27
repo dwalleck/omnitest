@@ -32,10 +32,10 @@ public sealed class TestRunner
             .Where(t => t.GetCustomAttribute<TestClassAttribute>() != null);
 
         var fixtureMethods = assembly.GetTypes()
-            .Where(t => t.Name == "<Program>$")
-            .SelectMany(t => t.GetMethods(BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic))
-            .Where(m => m.GetCustomAttribute<FixtureAttribute>() != null)
-            .ToDictionary(m => m.Name, m => CreateFixtureDelegate(m));
+                .Where(t => t.GetCustomAttribute<FixtureContainerAttribute>() != null)
+                .SelectMany(t => t.GetMethods(BindingFlags.Static | BindingFlags.Public))
+                .Where(m => m.GetCustomAttribute<FixtureAttribute>() != null)
+                .ToDictionary(m => m.Name, m => CreateFixtureDelegate(m));
 
         var allResults = new ConcurrentBag<TestResult>();
 

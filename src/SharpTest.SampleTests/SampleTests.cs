@@ -1,21 +1,9 @@
 using SharpTest.Core;
 
 
-
 [TestClass]
 public class ListTests
 {
-
-    [Fixture]
-    IEnumerable<object> TestList()
-    {
-        var list = new List<int> { 1, 2, 3 };
-        Console.WriteLine("Fixture: Initialized test list");
-        yield return list;
-        Console.WriteLine("Fixture: Clearing test list");
-        list.Clear();
-    }
-
     [Test]
     [UseFixture("TestList")]
     public void TestListCount(List<int> testList)

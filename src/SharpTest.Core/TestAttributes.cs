@@ -69,3 +69,16 @@ public sealed class TagAttribute : Attribute
     }
 }
 
+/// <summary>
+/// Base class for fixture containers. Inherit from this class to define fixtures.
+/// </summary>
+public abstract class FixtureContainer
+{
+}
+
+/// <summary>
+/// Attribute to mark a class as a fixture container.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class FixtureContainerAttribute : Attribute { }
+
