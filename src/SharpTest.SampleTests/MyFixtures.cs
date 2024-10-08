@@ -1,29 +1,42 @@
-using System;
-using System.Collections.Generic;
-using SharpTest.Core;
-
 namespace SharpTest.SampleTests;
 
+using SharpTest.Core;
+
 [FixtureContainer]
-public class MyFixtures : FixtureContainer
+public class TestFixtures
 {
     [Fixture]
-    public static IEnumerable<object> TestList()
+    public static IEnumerable<object> SimpleFixture()
     {
-        var list = new List<int> { 1, 2, 3 };
-        Console.WriteLine("Fixture: Initialized test list");
-        yield return list;
-        Console.WriteLine("Fixture: Clearing test list");
-        list.Clear();
+        Console.WriteLine("SimpleFixture: Setup");
+        yield return 42;
+        Console.WriteLine("SimpleFixture: Teardown");
     }
 
     [Fixture]
-    public static IEnumerable<object> TestDictionary()
+    public static IEnumerable<object> DisposableFixture()
     {
-        var dict = new Dictionary<string, int> { { "a", 1 }, { "b", 2 }, { "c", 3 } };
-        Console.WriteLine("Fixture: Initialized test dictionary");
-        yield return dict;
-        Console.WriteLine("Fixture: Clearing test dictionary");
-        dict.Clear();
+        Console.WriteLine("DisposableFixture: Setup");
+        using var disposable = new DisposableResource();
+        yield return disposable;
+        Console.WriteLine("DisposableFixture: Teardown");
+    }
+
+    [Fixture]
+    public static IEnumerable<object> AsyncFixture()
+    {
+        Console.WriteLine("AsyncFixture: Setup");
+        yield return Task.FromResult("Async Result");
+        Console.WriteLine("AsyncFixture: Teardown");
+    }
+}
+
+public class DisposableResource : IDisposable
+{
+    public bool IsDisposed { get; private set; }
+
+    public void Dispose()
+    {
+        IsDisposed = true;
     }
 }

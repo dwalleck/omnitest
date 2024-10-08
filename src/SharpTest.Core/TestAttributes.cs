@@ -22,6 +22,12 @@ public sealed class TestClassAttribute : Attribute { }
 public sealed class FixtureAttribute : Attribute { }
 
 /// <summary>
+/// Marks a class as a fixture container.
+/// </summary>
+[AttributeUsage(AttributeTargets.Class)]
+public sealed class FixtureContainerAttribute : Attribute { }
+
+/// <summary>
 /// Specifies which fixture should be used for a test method.
 /// </summary>
 [AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
@@ -68,17 +74,4 @@ public sealed class TagAttribute : Attribute
         Name = name;
     }
 }
-
-/// <summary>
-/// Base class for fixture containers. Inherit from this class to define fixtures.
-/// </summary>
-public abstract class FixtureContainer
-{
-}
-
-/// <summary>
-/// Attribute to mark a class as a fixture container.
-/// </summary>
-[AttributeUsage(AttributeTargets.Class)]
-public sealed class FixtureContainerAttribute : Attribute { }
 
